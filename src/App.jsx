@@ -4,13 +4,21 @@ import TimestampsDisplay from "./TimestampsDisplay";
 
 // The App component should be the parent component of ClickTimes and TimestampsDisplay.
 
-// The App.jsx file currently has a demo of how to use the TimestampsDisplay. You can delete this code.
-
 // You can get the current timestamp with Date.now().
 
 function App() {
-  const timestamps = [1000000000000, 1000000001000];
-  return <TimestampsDisplay timestamps={timestamps} />;
+  const [timestamps, setStamps] = useState([]);
+
+  const handleClick = (stamp) => {
+    setStamps([...timestamps, stamp]);
+  };
+
+  return (
+    <div>
+      <ClickTimes handleClick={handleClick} />
+      <TimestampsDisplay timestamps={timestamps} />
+    </div>
+  );
 }
 
 export default App;
