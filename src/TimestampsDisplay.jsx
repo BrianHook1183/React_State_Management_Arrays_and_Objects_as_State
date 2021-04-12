@@ -1,5 +1,7 @@
 import React from "react";
 
+// You do not need to edit TimestampsDisplay.
+
 function TimestampsDisplay(props) {
   const { timestamps } = props;
   return (
